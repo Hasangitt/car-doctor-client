@@ -5,8 +5,11 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 import AuthContext from "../../Providers/AuthContext";
 
+
 const Login = () => {
   const { userLogin } = useContext(AuthContext);
+  // const location = useLocation();
+  // const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,11 +18,7 @@ const Login = () => {
     const password = form.password.value;
     userLogin(email, password)
       .then((result) => {
-        console.log(result.user);
-        if(result){
-          alert('login success')
-          form.reset()
-        }
+        console.log(result.user)   
       })
       .catch((error) => {
         console.log(error);

@@ -2,12 +2,13 @@ import { useContext } from "react";
 import img from "../../assets/images/login/login.svg";
 import { FaFacebook } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../../Providers/AuthContext";
 
 const SignUp = () => {
 
 const {createUser} = useContext(AuthContext);
+const location = useLocation();
 const navigate = useNavigate();
 
 const handleSignUp = e => {
@@ -23,7 +24,8 @@ const handleSignUp = e => {
         if(result.user){
           alert('sign up successfully')
           form.reset();
-          navigate('/')
+          navigate(location?.state ? location?.state : '/')
+          form.reset('')
         }
     })
     .catch(error => {

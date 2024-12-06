@@ -8,7 +8,7 @@ const ServicesDate = () => {
        <ServiceProvider>
         <Services></Services>,
         <ServiceDetails></ServiceDetails>
-       </ServiceProvider>>
+       </ServiceProvider>
     )
 };
 

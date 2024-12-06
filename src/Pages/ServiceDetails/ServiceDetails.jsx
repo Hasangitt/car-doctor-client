@@ -12,6 +12,7 @@ const ServiceDetails = () => {
   console.log(bookings);
   const { img, description, facility, title, price, _id } = bookings;
   const services = useContext(serviceContext);
+
   return (
     <div>
       {/* <div className="mb-20">
